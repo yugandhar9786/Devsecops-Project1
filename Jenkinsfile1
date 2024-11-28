@@ -54,8 +54,8 @@ stage("Docker Build & Push"){
                 script{
                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
                        sh "docker build -t devsecops_ad ."
-                       sh "docker tag devsecops_ad praveensingam1994/devsecops_ad:latest "
-                       sh "docker push praveensingam1994/devsecops_ad:latest "
+                       sh "docker tag devsecops_ad yugandhar7/devsecops_ad:latest "
+                       sh "docker push yugandhar7/devsecops_ad:latest "
                     }
                 }
             }

@@ -67,6 +67,7 @@ stage("Docker Build & Push"){
         }
 stage('Deploy to container'){
             steps{
+                sh 'docker rm -f 2048 || true'
                 sh 'docker run -d --name 2048 -p 3000:3000 yugandhar7/devsecops_ad:latest'
             }
         }

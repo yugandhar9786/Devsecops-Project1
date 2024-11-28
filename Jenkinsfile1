@@ -15,7 +15,7 @@ pipeline{
         }
         stage('Checkout from Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/AWS-AZURE-Bootcamp5/Devsecops-Project1.git'
+                git branch: 'main', url: 'https://github.com/yugandhar9786/Devsecops-Project1.git'
             }
         }
         stage("Sonarqube Analysis "){
@@ -62,12 +62,12 @@ stage("Docker Build & Push"){
         }
         stage("TRIVY"){
             steps{
-                sh "trivy image praveensingam1994/devsecops_ad:latest > trivy.txt" 
+                sh "trivy image yugandhar7/devsecops_ad:latest > trivy.txt" 
             }
         }
 stage('Deploy to container'){
             steps{
-                sh 'docker run -d --name 2048 -p 3000:3000 praveensingam1994/devsecops_ad:latest'
+                sh 'docker run -d --name 2048 -p 3000:3000 yugandhar7/devsecops_ad:latest'
             }
         }
 stage('Deploy to kubernets'){
